@@ -72,7 +72,7 @@ class ParallelConnection(object):
 def is_not_none(dict_or_tuple):
     if dict_or_tuple:
         if isinstance(dict_or_tuple, dict):
-            if all(r is None for r in dict_or_tuple.values()):
+            if all(r is None for r in list(dict_or_tuple.values())):
                 return False
         else:
             if all(r is None for r in dict_or_tuple):
